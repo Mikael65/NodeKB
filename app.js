@@ -114,6 +114,18 @@ app.post('/articles/edit/:id', function(req, res){
     });
 });
 
+// Delete route
+app.delete('/article/:id', function(req, res){
+    var query = {_id:req.params.id}
+
+    Article.remove(query, function(err){
+        if(err){
+            console.log(err);
+        }
+        res.send('Success');
+    });
+});
+
 // Start Server
 app.listen(port, function(){
     console.log('Server started on port ' + port);
