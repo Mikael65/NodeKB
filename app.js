@@ -20,6 +20,8 @@ db.on('error', function(err){
 // Init App
 const app = express();
 const port = 3000
+// make the html-output look pretty
+app.locals.pretty = true;
 
 // Bring In Models
 var Article = require('./models/articles');
